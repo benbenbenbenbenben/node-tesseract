@@ -27,6 +27,12 @@ class BaseApi : public node::ObjectWrap {
     static Handle<Value> SetImage(const Arguments& args);
     static Handle<Value> Recognize(const Arguments& args);
     static Handle<Value> GetText(const Arguments& args);
+    static Handle<Value> GetBoxes(const Arguments& args);
+    static Handle<Value> SetRectangle(const Arguments& args);
+    static Handle<Value> MeanTextConf(const Arguments& args);
+    static Handle<Value> SetVariable(const Arguments& args);
+    static Handle<Value> WhitelistCharacters(const Arguments& args);
+    static Handle<Value> SetPageSegMode(const Arguments& args);
     static Handle<Value> Clear(const Arguments& args);
     static Handle<Value> End(const Arguments& args);
 
