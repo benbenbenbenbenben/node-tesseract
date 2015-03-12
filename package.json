@@ -27,6 +27,10 @@
     {
       "name": "Alec Embke",
       "email": "aembke@gmail.com"
+    },
+    {
+      "name": "Adam",
+      "url": "https://github.com/adamkomarov"
     }
   ],
   "license": "MIT"
