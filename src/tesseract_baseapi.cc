@@ -6,6 +6,7 @@
 
 #define BUILDING_NODE_EXTENSION
 #include <node.h>
+#include <node_buffer.h>
 #include "tesseract_baseapi.h"
 #include "leptonica_pix.h"
 
@@ -117,6 +118,10 @@ Handle<Value> BaseApi::SetImage(const Arguments& args) {
   PIX* pix;
   if (args[0]->IsString()) {
     pix = pixRead(strdup(*(String::Utf8Value(args[0]))));
+  } else if (node::Buffer::HasInstance(args[0])) {
+    char* buff = node::Buffer::Data(args[0]);
+    size_t size = node::Buffer::Length(args[0]);
+    pix = pixReadMem((l_uint8*)buff, size);
   } else {
     PixWrap* pixWrap = ObjectWrap::Unwrap<PixWrap>(args[0]->ToObject());
     pix = pixWrap->data();
