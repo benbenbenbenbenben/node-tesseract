@@ -44,4 +44,5 @@ TODO
 ===============
 * Make class BaseApi support more of TessBaseAPI
 * Make tests
+* Changelog
 * Support of other Tesseract APIs (someday)!
